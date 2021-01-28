@@ -3,6 +3,27 @@ const ExpressError = require('./utils/ExpressError');
 const Campground = require('./models/campground');
 const Review = require('./models/review');
 
+module.exports.errorMiddleware = (err, req, res, next) => {
+  const { statusCode = 500 } = err;
+  if (!err.message) err.message = 'Oh No, Something Went Wrong!';
+  res.status(statusCode).render('error', { err });
+};
+
+// FOR NON EXISTENT ROUTES
+module.exports.nonExistentRoutesMiddleware = (req, res, next) => {
+  next(new ExpressError('Page Not Found', 404));
+};
+
+module.exports.localsMiddleware = (req, res, next) => {
+  if (!['/login', '/register', '/'].includes(req.originalUrl)) {
+    req.session.returnTo = req.originalUrl;
+  }
+  res.locals.currentUser = req.user;
+  res.locals.success = req.flash('success');
+  res.locals.error = req.flash('error');
+  next();
+};
+
 module.exports.isLoggedIn = (req, res, next) => {
   if (!req.isAuthenticated()) {
     req.flash('error', 'You must be signed in first!');
