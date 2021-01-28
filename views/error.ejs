@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Groundzilla</title>
+    <link rel="stylesheet" href="/stylesheets/error.css" />
+  </head>
+  <body>
+    <div class="content">
+      <canvas class="snow" id="snow"></canvas>
+      <div class="main-text">
+        <% if (process.env.NODE_ENV !== "production") { %>
+        <p><%= err.stack %></p>
+        <% } else { %>
+        <h3>Aw jeez.<br />That page has gone missing.</h3>
+        <% } %>
+        <a class="home-link" href="/">Hitch a ride back home.</a>
+      </div>
+      <div class="ground">
+        <div class="mound">
+          <div class="mound_text">404</div>
+          <div class="mound_spade"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/javascripts/error.js"></script>
+  </body>
+</html>
