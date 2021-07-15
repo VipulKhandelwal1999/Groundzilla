@@ -105,6 +105,8 @@ SECRET = secret_key
 
 ### Run
 
+Enter the following commands on your terminal to run it locally:
+
 ```
 npm start
 
