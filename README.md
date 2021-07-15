@@ -5,11 +5,11 @@ This project was created using Node.js, Express, MongoDB, and Bootstrap. Passpor
 
 ### [Live Demo](https://dry-shelf-66779.herokuapp.com/)
 
-![screenshot]()
+![screenshot](https://github.com/VipulKhandelwal1999/Groundzilla/blob/main/images/home_screen.png)
 
-![screenshot]()
+![screenshot](https://github.com/VipulKhandelwal1999/Groundzilla/blob/main/images/home_screen_1.png)
 
-![screenshot]()
+![screenshot](https://github.com/VipulKhandelwal1999/Groundzilla/blob/main/images/campgrounds.png)
 
 ---
 
@@ -76,7 +76,7 @@ Enter the following commands on your terminal:
 
 ```
 git clone https://github.com/VipulKhandelwal1999/Groundzilla.git
-cd Groundzilla-main
+cd Groundzilla
 npm install
 ```
 
@@ -105,7 +105,7 @@ SECRET = secret_key
 
 ### Run
 
-``
+```
 npm start
 
 ```
